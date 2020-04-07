@@ -1,0 +1,26 @@
+id: best-practices
+name: Contoso best practices
+description: Best practices for service engineering across Contoso
+
+inputs:
+  repo_name_min: 4
+  allowed_licenses: [MIT, Apache-2.0]
+
+policies:
+  repo:
+    policy: /github/policies/repo-structure@3f4b61e2
+    with:
+      allows-licenses: inputs.allowed_licenses
+      wikis-allowed: false
+      name-min-length: inputs.repo_name_min
+  prs: 
+    policy: /contoso/governance/pr-reviewers@77f0ed87
+    with:
+      number-of-reviewers: 2
+  teams:
+    policy: /contoso/governance/team-membership@1.3
+  actions:
+    policy: /github/policies/3rd-party-actions@2.3
+    with:
+      approved: [ "{{ //github/.*/ }}", "{{ //contoso/.*/ }}", /partner1/coolAction@1.1]
+      
