@@ -18,6 +18,6 @@ policies:
   actions:
     policy: /github/policies/3rd-party-actions@2.3
     with:
-      approved: [ "{{ //github/.*/ }}", "{{ //contoso/.*/ }}", /partner1/coolAction@1.1]
+      approved: [ "{{ /^github\/.*/ }}", "{{ /^contoso\/.*/ }}", partner1/coolAction@1.1]
   
  
