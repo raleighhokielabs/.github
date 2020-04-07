@@ -14,8 +14,3 @@ ensure:
  
       - name: CodeQL scan
         conclusion: SUCCESS
-        severity: 
-          max: 7
-
-      - name: Token scan
-        conclusion: SUCCESS
