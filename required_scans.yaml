@@ -5,13 +5,16 @@ description: All code merged into `master` must pass the required set of securit
 for: pull_requests
 
 where:
-  - resource.baseref.name == "master"
-  - resource.merged == true
+  - branch.name == "master"
+  - merged == true
   
 ensure:
   checks:
     required:
+ 
       - name: CodeQL scan
-        conclusion: SUCCESS
+        severity: 
+          max: 7.5
+        
       - name: Token scan
         conclusion: SUCCESS
