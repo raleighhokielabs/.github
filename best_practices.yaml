@@ -1,18 +1,14 @@
 name: Contoso best practices
 description: Best practices for service engineering across Contoso
 
-inputs:
-  repo_name_min: 4
-  allowed_licenses: [MIT, Apache-2.0]
-
 policies:
 
   repo:
     policy: /github/policies/repo-structure@1.0
     with:
-      allows-licenses: inputs.allowed_licenses
+      allows-licenses: [MIT, Apache-2.0]
       wikis-allowed: false
-      name-min-length: inputs.repo_name_min
+      name-min-length: 4
       
   prs: 
     policy: /contoso/governance/pr-reviewers@2.1
