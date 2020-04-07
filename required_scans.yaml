@@ -11,6 +11,5 @@ where:
 ensure:
   checks:
     required:
- 
       - name: CodeQL scan
         conclusion: SUCCESS
